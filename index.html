@@ -769,7 +769,7 @@ function closeModalOut(e) {
 }
 
 // ─── ORDER SUBMIT ───────────────────────────────────────────────────
-function oldsubmitOrder() {
+function submitOrder() {
   const name = document.getElementById('inp-name').value.trim();
   const phone = document.getElementById('inp-phone').value.trim();
 
@@ -839,23 +839,7 @@ function showToast(msg) {
 }
 
 // ─── INIT ────────────────────────────────────────────────────────────
-function submitOrder() {
-    const customerName = document.querySelector('input[placeholder*="اسمك"]').value.trim();
-    const customerPhone = document.querySelector('input[placeholder*="01xxxxxxxxx"]').value.trim();
-    const productName = document.getElementById('modal-item-name').innerText.trim();
-    const productPrice = document.getElementById('modal-item-price').innerText.trim();
 
-    if (!customerName || !customerPhone) {
-        alert('برجاء إدخال الاسم ورقم الهاتف لإتمام الطلب!');
-        return;
-    }
-
-    const message = `*طلب جديد من المتجر* 🛍️\n\n👤 *الاسم:* ${customerName}\n📞 *الهاتف:* ${customerPhone}\n📦 *المنتج:* ${productName}\n💰 *الإجمالي:* ${productPrice}`;
-    const encodedMessage = encodeURIComponent(message);
-    const whatsappUrl = "https://wa.me/201060901654?text=" + encodedMessage;
-
-    window.open(whatsappUrl, '_blank');
-}
 }
 
 renderFeatured();
